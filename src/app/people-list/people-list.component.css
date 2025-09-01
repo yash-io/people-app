@@ -1,0 +1,2 @@
+table td:last-child { white-space:nowrap; }
+button + button { margin-left:.35rem; }
