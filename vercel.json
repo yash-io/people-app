@@ -1,7 +1,7 @@
 {
   "framework": "angular",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/people-app",
+  "outputDirectory": "dist/people-app/browser",
   "rewrites": [
     { "source": "/favicon.ico", "destination": "/favicon.ico" },
     { "source": "/person/:match*", "destination": "https://crud-api-olive.vercel.app/person/:match*" },
