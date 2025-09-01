@@ -1,0 +1,9 @@
+{
+  "framework": "angular",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/people-app",
+  "rewrites": [
+    { "source": "/person/:match*", "destination": "https://crud-api-olive.vercel.app/person/:match*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

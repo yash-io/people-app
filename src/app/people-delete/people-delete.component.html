@@ -1,1 +1,18 @@
-<p>people-delete works!</p>
+<div *ngIf="person; else notFound">
+	<h2>Delete Person</h2>
+	<p>Are you sure you want to delete the following person?</p>
+	<ul>
+		<li><strong>ID:</strong> {{person?.id}}</li>
+		<li><strong>Name:</strong> {{person?.name}}</li>
+		<li><strong>Age:</strong> {{person?.age}}</li>
+		<li><strong>Gender:</strong> {{person?.gender}}</li>
+		<li><strong>Mobile:</strong> {{person?.mobile}}</li>
+	</ul>
+	<button (click)="confirm()" style="margin-right:8px;">Yes, Delete</button>
+	<button (click)="cancel()">Cancel</button>
+</div>
+
+<ng-template #notFound>
+	<p>Person not found.</p>
+	<button (click)="cancel()">Back</button>
+</ng-template>

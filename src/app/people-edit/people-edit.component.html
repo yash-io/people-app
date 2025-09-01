@@ -1,1 +1,28 @@
-<p>people-edit works!</p>
+<h2>Edit Person</h2>
+<div *ngIf="person; else notFound">
+	<form (ngSubmit)="save()" #f="ngForm">
+		<label>Name
+			<input name="name" [(ngModel)]="model.name" required />
+		</label><br>
+		<label>Age
+			<input name="age" type="number" [(ngModel)]="model.age" required />
+		</label><br>
+		<label>Gender
+			<select name="gender" [(ngModel)]="model.gender">
+				<option value="">--select--</option>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Other">Other</option>
+			</select>
+		</label><br>
+		<label>Mobile
+			<input name="mobile" [(ngModel)]="model.mobile" />
+		</label><br>
+		<button type="submit" [disabled]="f.invalid">Save</button>
+		<button type="button" (click)="router.navigate(['/people'])">Cancel</button>
+	</form>
+</div>
+<ng-template #notFound>
+	<p>Person not found.</p>
+	<button (click)="router.navigate(['/people'])">Back</button>
+</ng-template>

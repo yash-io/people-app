@@ -1,1 +1,18 @@
-<p>people-list works!</p>
+<h2>People</h2>
+<div *ngIf="!people?.length">Loading...</div>
+<table *ngIf="people?.length">
+  <thead>
+    <tr><th>ID</th><th>Name</th><th>Age</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of people">
+      <td>{{p._id || p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.age}}</td>
+      <td>
+        <button (click)="edit(p._id || p.id)">Edit</button>
+        <button (click)="del(p._id || p.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
